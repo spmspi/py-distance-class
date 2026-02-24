@@ -19,7 +19,7 @@ class Distance:
             value = other
         return Distance(self.km + value)
 
-    def __iadd__(self, other: Distance | int | float) -> None:
+    def __iadd__(self, other: Distance | int | float) -> Distance:
         if isinstance(other, Distance):
             value = other.km
         else:
@@ -48,7 +48,7 @@ class Distance:
             value = other
         return self.km != value
 
-    def __lt__(self, other: int | float) -> bool:
+    def __lt__(self, other: Distance | int | float) -> bool:
         if isinstance(other, Distance):
             value = other.km
         else:
